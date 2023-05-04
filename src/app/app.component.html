@@ -1,0 +1,59 @@
+<div class="text-center">Consulta tu pelicula favorita en IMDB</div>
+<div class="container-fluid d-flex flex-column" id="buscador">
+  <label>Escribe el nombre de la pelicula que te gustaria buscar</label>
+  <input type="text" placeholder="Escribe el nombre de una pelicula" #input />
+  <button (click)="consultar(input.value)">buscar</button>
+</div>
+<div
+  class="container-fluid d-flex align-content-around justify-content-around flex-wrap"
+>
+  <div class="example-2 card" *ngFor="let movie of movies">
+    <div  class="wrapper"style="background: url({{movie.image.url}})
+    cover / cover no-repeat;">
+      <div class="header">
+        <div class="date">
+          <span class="year">{{movie.year}}</span>
+        </div>
+        <ul class="menu-content">
+          <li>
+            <a href="#" class="fa fa-bookmark-o"></a>
+          </li>
+          <li>
+            <a href="#" class="fa fa-heart-o"><span>18</span></a>
+          </li>
+          <li>
+            <a href="#" class="fa fa-comment-o"><span>3</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="data">
+        <div class="content">
+          <span class="author">Jane Doe</span>
+          <h1 class="title">
+            <a href="#">Stranger Things: The sound of the Upside Down</a>
+          </h1>
+          <p class="text">
+            The antsy bingers of Netflix will eagerly anticipate the digital
+            release of the Survive soundtrack, out today.
+          </p>
+          <a href="#" class="button">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+  <div class="card mt-3" style="width: 18rem" >
+    <img [src]="movie?.image.url" class="card-img-top" alt="" />
+    <div class="card-body">
+      <p>{{ movie.title }}</p>
+      <p>{{ movie.titleType }}</p>
+      <p>{{ movie.year }}</p>
+      <ngb-rating
+        [max]="5"
+        [(rate)]="movie.rate"
+        [readonly]="false"
+      ></ngb-rating>
+      <p>Rate: {{ movie.rate }}</p>
+    </div>
+  </div>-->
