@@ -293,3 +293,27 @@ h1 {
     }
   }
 }
+.stars {
+  display: inline-block;
+  font-family: sans-serif; // asegura que ★ se muestre correctamente
+  font-size: 20px;
+  line-height: 1;
+  --percent: calc(var(--rating) / 5 * 100%);
+}
+
+.stars::before {
+  background: linear-gradient(90deg, #fc0 var(--percent), #eee var(--percent));
+  -webkit-background-clip: text;
+  content: "★★★★★";
+  -webkit-text-fill-color: transparent;
+}
+
+#titulo {
+  background-color: rgb(245, 197, 24);
+  color: #000;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: normal;
+}
